@@ -1,0 +1,38 @@
+﻿<Window x:Class="WPFGrupowy.AddBookPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFGrupowy"
+        mc:Ignorable="d"
+        Title="AddBookPage" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <TextBox x:Name="tytul_texbox"
+                 Grid.Row="0"
+                 Grid.Column="1"/>
+        <TextBox x:Name="opis_texbox"
+                 Grid.Row="1"
+                 Grid.Column="1"/>
+        <TextBox x:Name="autor_texbox"
+                 Grid.Row="2"/>
+        <DatePicker x:Name="dataWydania_texbox"
+                    Grid.Row="3"/>
+
+        <Button x:Name="AddBook" 
+                Content="Add Book"
+                Grid.Row="4"/>
+    </Grid>
+</Window>
