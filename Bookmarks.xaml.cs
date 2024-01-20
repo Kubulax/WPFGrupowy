@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WPFGrupowy
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logika interakcji dla klasy Bookmarks.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Bookmarks : Window
     {
-        public MainWindow()
+        public Bookmarks()
         {
             InitializeComponent();
         }
@@ -32,7 +31,7 @@ namespace WPFGrupowy
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            new Bookmarks().ShowDialog();
+
         }
     }
 }
