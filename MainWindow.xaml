@@ -6,18 +6,25 @@
         xmlns:local="clr-namespace:WPFGrupowy"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ListView>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <Label x:Name="Title"></Label>
-                        <Label x:Name="Description"></Label>
-                        <Label x:Name="Autor"></Label>
-                        <Button Click="Button_Click" Content="Bookmark"></Button>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </Grid>
+    <StackPanel>
+        <StackPanel>
+            <Button Content="Dodaj ksiazke" Click="AddBook"/>
+        </StackPanel>
+
+        <ScrollViewer>
+            <ListView x:Name="ListaKsiazek">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Label x:Name="Title"></Label>
+                            <Label x:Name="Description"></Label>
+                            <Label x:Name="Autor"></Label>
+                            <Button Click="Button_Click" Content="Bookmark"/>
+                            <Button Content="Usun ksiazke" Click="RemoveBook"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollViewer>
+    </StackPanel>
 </Window>

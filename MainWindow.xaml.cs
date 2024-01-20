@@ -34,5 +34,15 @@ namespace WPFGrupowy
         {
             new Bookmarks().ShowDialog();
         }
+
+        private void AddBook(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveBook(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
