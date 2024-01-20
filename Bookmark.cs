@@ -11,5 +11,6 @@ namespace WPFGrupowy
     {
         public int PageNumber { get; set; }
         public string Description { get; set; }
+
     }
 }

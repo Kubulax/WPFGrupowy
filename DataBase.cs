@@ -24,18 +24,18 @@ namespace WPFGrupowy
             Books.Remove(book);
         }
 
-        public void ReadDataBaseFromJsonFile()
+        public List<Book> ReadDataBaseFromJsonFile()
         {
             if (File.Exists(dbPath))
             {
                 string serializedDataBase = File.ReadAllText(dbPath);
                 List<Book> books = JsonConvert.DeserializeObject<List<Book>>(serializedDataBase);
 
-                Books = books;
+                return books;
             }
             else
             {
-
+                return null;
             }
         }
 
