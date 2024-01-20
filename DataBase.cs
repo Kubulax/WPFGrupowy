@@ -35,7 +35,8 @@ namespace WPFGrupowy
             }
             else
             {
-
+                string serializedDataBase = JsonConvert.SerializeObject(new List<Book>());
+                File.WriteAllText(dbPath, serializedDataBase);
             }
         }
 
@@ -43,11 +44,13 @@ namespace WPFGrupowy
         { 
             if (File.Exists(dbPath))
             {
-
+                string serializedDataBase = JsonConvert.SerializeObject(Books);
+                File.WriteAllText(dbPath, serializedDataBase);
             }
             else
             {
-
+                string serializedDataBase = JsonConvert.SerializeObject(new List<Book>());
+                File.WriteAllText(dbPath, serializedDataBase);
             }
         }
     }
