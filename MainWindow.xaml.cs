@@ -37,7 +37,7 @@ namespace WPFGrupowy
 
         private void AddBook(object sender, RoutedEventArgs e)
         {
-
+            new AddBookPage().ShowDialog();
         }
 
         private void RemoveBook(object sender, RoutedEventArgs e)
