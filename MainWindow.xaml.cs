@@ -23,6 +23,7 @@ namespace WPFGrupowy
         public MainWindow()
         {
             InitializeComponent();
+            ListaKsiazek.ItemsSource = DataBase.Books;
         }
 
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -38,11 +39,15 @@ namespace WPFGrupowy
         private void AddBook(object sender, RoutedEventArgs e)
         {
             new AddBookPage().ShowDialog();
+            ListaKsiazek.ItemsSource = DataBase.Books;
         }
 
         private void RemoveBook(object sender, RoutedEventArgs e)
         {
 
+            Book selectedbook = (sender as Button).CommandParameter as Book;
+            DataBase.RemoveBook(selectedbook);
+            ListaKsiazek.ItemsSource = DataBase.Books;
         }
     }
 }

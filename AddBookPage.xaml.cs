@@ -26,10 +26,10 @@ namespace WPFGrupowy
 
         private void AddBook_Click(object sender, RoutedEventArgs e)
         {
-            List<Bookmark> b = new List<Bookmark>();
-            Book book = new Book(b,tytul_texbox.Text,opis_texbox.Text,autor_texbox.Text,dataWydania_texbox.DisplayDate);
 
+            Book book = new Book(tytul_texbox.Text,opis_texbox.Text,autor_texbox.Text,dataWydania_texbox.DisplayDate);
             DataBase.AddBook(book);
+            this.Close();
         }
     }
 }
