@@ -67,8 +67,7 @@ namespace WPFGrupowy
             List<Book> listaKsiazek = new List<Book>();
             listaKsiazek.Add(book);
 
-            DataBase dataBase = new DataBase();
-            books = dataBase.ReadDataBaseFromJsonFile();
+            books = DataBase.Books;
             ListaKsiazek.ItemsSource = listaKsiazek;
         }
 

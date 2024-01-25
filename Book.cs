@@ -8,15 +8,15 @@ namespace WPFGrupowy
 {
     public class Book
     {
-        public List<Bookmark> Bookmarks { get; }
+        public List<Bookmark> Bookmarks { get; private set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Author { get; set; }
         public DateTime PublishedOn { get; set; }
 
-        public Book (List<Bookmark> bookmarks, string title, string description, string author, DateTime publishedOn)
+        public Book (string title, string description, string author, DateTime publishedOn)
         {
-            Bookmarks = bookmarks;
+            Bookmarks = new List<Bookmark>(); 
             Title = title;
             Description = description;
             Author = author;
