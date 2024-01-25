@@ -29,12 +29,7 @@ namespace WPFGrupowy
             ListaKsiazek.ItemsSource = DataBase.Books;
         }
 
-        private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ShowBookmarks(object sender, RoutedEventArgs e)
         {
             Book selectedbook = (sender as Button).CommandParameter as Book;
 

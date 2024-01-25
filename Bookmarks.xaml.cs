@@ -33,7 +33,7 @@ namespace WPFGrupowy
             MessageBox.Show(message);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddBookmark(object sender, RoutedEventArgs e)
         {
             Bookmark bookmark = new Bookmark(int.Parse(page_add.Text), opis_add.Text);
             (DataContext as Book).AddBookmark(bookmark);

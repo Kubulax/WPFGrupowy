@@ -5,42 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFGrupowy"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
     <StackPanel>
         <StackPanel>
             <Button Content="Dodaj ksiazke" Click="AddBook"/>
         </StackPanel>
 
-        
+        <ScrollViewer Height="400">
             <ListView x:Name="ListaKsiazek" Margin="10">
-            
                 <ListView.ItemTemplate>
-                    
                     <DataTemplate>
-                    <WrapPanel>
-                        <StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <Label FontSize="20">Tytul:</Label>
-                                <Label x:Name="Title" Content="{Binding Title}" FontSize="20"></Label>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <Label FontSize="20">Opis:</Label>
-                                <Label x:Name="Description" Content="{Binding Description}" FontSize="20"></Label>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <Label FontSize="20">Autor</Label>
-                                <Label x:Name="Autor" Content="{Binding Author}" FontSize="20"></Label>
-                            </StackPanel>
+                        <WrapPanel>
+                            <StackPanel Margin="10">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label FontSize="20">Tytul:</Label>
+                                    <Label x:Name="Title" Content="{Binding Title}" FontSize="20"></Label>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label FontSize="20">Opis:</Label>
+                                    <Label x:Name="Description" Content="{Binding Description}" FontSize="20"></Label>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label FontSize="20">Autor</Label>
+                                    <Label x:Name="Autor" Content="{Binding Author}" FontSize="20"></Label>
+                                </StackPanel>
 
 
-                            <Button Click="Button_Click" CommandParameter="{Binding}" Content="Bookmark"/>
-                            <Button Content="Usun ksiazke" CommandParameter="{Binding}" Click="RemoveBook"/>
-                        </StackPanel>
-                    </WrapPanel>
-                </DataTemplate>
+                                <Button Click="ShowBookmarks" CommandParameter="{Binding}" Content="Zakładki" Margin="2"/>
+                                <Button Click="RemoveBook" Content="Usuń książkę" CommandParameter="{Binding}" Margin="2"/>
+                            </StackPanel>
+                        </WrapPanel>
+                    </DataTemplate>
                 </ListView.ItemTemplate>
-            
-        </ListView>
-        
+            </ListView>
+        </ScrollViewer>
     </StackPanel>
 </Window>
