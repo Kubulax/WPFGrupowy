@@ -37,20 +37,20 @@ namespace WPFGrupowy
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Book selectedbook = (sender as Button).CommandParameter as Book;
-            
-            new Bookmarks(selectedbook).ShowDialog();
+
+            Bookmarks bookmarks = new Bookmarks(selectedbook);
+            bookmarks.DataContext = selectedbook;
+            bookmarks.ShowDialog();
         }
 
         private void AddBook(object sender, RoutedEventArgs e)
-        {
-            
+        {     
             new AddBookPage().ShowDialog();
             ListaKsiazek.ItemsSource = DataBase.Books;
         }
 
         private void RemoveBook(object sender, RoutedEventArgs e)
         {
-
             Book selectedbook = (sender as Button).CommandParameter as Book;
             DataBase.RemoveBook(selectedbook);
             ListaKsiazek.DataContext = DataBase.Books;

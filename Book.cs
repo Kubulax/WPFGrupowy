@@ -28,13 +28,14 @@ namespace WPFGrupowy
 
         public void AddBookmark (Bookmark bookmark)
         {
-            if(Bookmarks==null) { Bookmarks = new ObservableCollection<Bookmark>(); }
             Bookmarks.Add(bookmark);
+            DataBase.SaveDataBaseToJsonFile();
         }
 
         public void RemoveBookmark (Bookmark bookmark)
         {
             Bookmarks.Remove(bookmark);
+            DataBase.SaveDataBaseToJsonFile();
         }
     }
 }

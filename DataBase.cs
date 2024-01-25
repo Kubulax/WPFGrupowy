@@ -12,7 +12,7 @@ namespace WPFGrupowy
 {
     public static class DataBase
     {
-        private static readonly string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Books", "books2.json");
+        private static readonly string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Books", "books.json");
         public static ObservableCollection<Book> Books { get; private set; }
 
         static DataBase() 
@@ -46,6 +46,8 @@ namespace WPFGrupowy
             }
             else
             {
+                Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Books"));
+
                 string serializedDataBase = JsonConvert.SerializeObject(new ObservableCollection<Book>());
                 File.WriteAllText(dbPath, serializedDataBase);
 
@@ -53,7 +55,7 @@ namespace WPFGrupowy
             }
         }
 
-        private static void SaveDataBaseToJsonFile()
+        public static void SaveDataBaseToJsonFile()
         {
             if (File.Exists(dbPath))
             {
@@ -63,6 +65,8 @@ namespace WPFGrupowy
             }
             else
             {
+                Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Books"));
+
                 string serializedDataBase = JsonConvert.SerializeObject(new ObservableCollection<Book>());
                 File.WriteAllText(dbPath, serializedDataBase);
 
