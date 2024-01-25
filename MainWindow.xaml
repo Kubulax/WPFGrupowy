@@ -9,6 +9,7 @@
     <StackPanel>
         <StackPanel>
             <Button Content="Dodaj ksiazke" Click="AddBook"/>
+            <Button Content="Dodaj bookmark" Click="AddBookmark"/>
         </StackPanel>
 
         <ScrollViewer Height="400">
