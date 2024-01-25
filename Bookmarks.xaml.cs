@@ -10,37 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WPFGrupowy
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logika interakcji dla klasy Bookmarks.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Bookmarks : Window
     {
-        public MainWindow()
+        public Bookmarks()
         {
             InitializeComponent();
         }
 
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            MessageBox.Show("placeholder");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            new Bookmarks().ShowDialog();
-        }
-
-        private void AddBook(object sender, RoutedEventArgs e)
-        {
-            new AddBookPage().ShowDialog();
-        }
-
-        private void RemoveBook(object sender, RoutedEventArgs e)
         {
 
         }
