@@ -8,7 +8,7 @@ namespace WPFGrupowy
 {
     public class Book
     {
-        public List<Bookmark> Bookmarks { get; private set; }
+        public List<Bookmark> Bookmarks { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Author { get; set; }

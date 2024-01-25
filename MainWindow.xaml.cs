@@ -20,6 +20,9 @@ namespace WPFGrupowy
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -40,7 +43,7 @@ namespace WPFGrupowy
 
         private void AddBook(object sender, RoutedEventArgs e)
         {
-
+            
             new AddBookPage().ShowDialog();
             ListaKsiazek.ItemsSource = DataBase.Books;
         }

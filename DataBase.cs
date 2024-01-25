@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,13 +13,13 @@ namespace WPFGrupowy
     public class DataBase
     {
         private readonly string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Books", "books.db");
-        static public List<Book> Books { get; private set; }
+        static public ObservableCollection<Book> Books { get; private set; }
 
-        public DataBase() { if (Books == null) { Books = new List<Book>(); } }
+        public DataBase() { if (Books == null) { Books = new ObservableCollection<Book>(); } }
 
         public static void AddBook(Book book)
         {
-            if (Books == null) { Books = new List<Book>(); }
+            if (Books == null) { Books = new ObservableCollection<Book>(); }
             Books.Add(book);
         }
 
@@ -32,7 +33,7 @@ namespace WPFGrupowy
             if (File.Exists(dbPath))
             {
                 string serializedDataBase = File.ReadAllText(dbPath);
-                List<Book> books = JsonConvert.DeserializeObject<List<Book>>(serializedDataBase);
+                ObservableCollection<Book> books = JsonConvert.DeserializeObject<ObservableCollection<Book>>(serializedDataBase);
 
                 Books = books;
             }

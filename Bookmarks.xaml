@@ -27,7 +27,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <Label x:Name="Page" Content="{Binding Page}"/>
+                            <Label x:Name="Page" Content="{Binding PageNumber}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

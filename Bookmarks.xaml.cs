@@ -20,11 +20,12 @@ namespace WPFGrupowy
     public partial class Bookmarks : Window
     {
         Book dokbook = new Book();
+       
         public Bookmarks(Book selbook)
         {
             InitializeComponent();
-            
-            dokbook = selbook;
+
+           dokbook = selbook;
         }
 
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
