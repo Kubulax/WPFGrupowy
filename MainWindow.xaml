@@ -31,9 +31,9 @@
                                 <Label FontSize="20">Autor</Label>
                                 <Label x:Name="Autor" Content="{Binding Author}" FontSize="20"></Label>
                             </StackPanel>
-                            
-                            
-                            <Button Click="Button_Click" Content="Bookmark"/>
+
+
+                            <Button Click="Button_Click" CommandParameter="{Binding}" Content="Bookmark"/>
                             <Button Content="Usun ksiazke" CommandParameter="{Binding}" Click="RemoveBook"/>
                         </StackPanel>
                     </WrapPanel>

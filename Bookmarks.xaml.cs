@@ -25,7 +25,7 @@ namespace WPFGrupowy
         {
             InitializeComponent();
 
-           dokbook = selbook;
+            dokbook = selbook;
         }
 
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)

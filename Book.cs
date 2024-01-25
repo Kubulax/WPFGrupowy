@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace WPFGrupowy
 {
     public class Book
     {
-        public List<Bookmark> Bookmarks { get; set; }
+        public ObservableCollection<Bookmark> Bookmarks { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Author { get; set; }
@@ -16,7 +17,7 @@ namespace WPFGrupowy
 
         public Book(string title, string description, string author, DateTime publishedOn)
         {
-            Bookmarks = new List<Bookmark>();
+            Bookmarks = new ObservableCollection<Bookmark>();
             Title = title;
             Description = description;
             Author = author;
@@ -27,7 +28,7 @@ namespace WPFGrupowy
 
         public void AddBookmark (Bookmark bookmark)
         {
-            if(Bookmarks==null) { Bookmarks = new List<Bookmark>(); }
+            if(Bookmarks==null) { Bookmarks = new ObservableCollection<Bookmark>(); }
             Bookmarks.Add(bookmark);
         }
 
