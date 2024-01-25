@@ -15,23 +15,13 @@ using System.Windows.Shapes;
 namespace WPFGrupowy
 {
     /// <summary>
-    /// Logika interakcji dla klasy Bookmarks.xaml
+    /// Logika interakcji dla klasy AddBookmark.xaml
     /// </summary>
-    public partial class Bookmarks : Window
+    public partial class AddBookmark : Window
     {
-        public Bookmarks()
+        public AddBookmark()
         {
             InitializeComponent();
-        }
-
-        private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("placeholder");
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }

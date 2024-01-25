@@ -14,12 +14,12 @@ namespace WPFGrupowy
         private readonly string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Books", "books.db");
         static public List<Book> Books { get; private set; }
 
-        public void AddBook(Book book)
+        public static void AddBook(Book book)
         {
             Books.Add(book);
         }
 
-        public void RemoveBook(Book book)
+        public static void RemoveBook(Book book)
         {
             Books.Remove(book);
         }
