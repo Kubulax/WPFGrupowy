@@ -19,7 +19,18 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+        <Label Content="Tytuł:"
+                Grid.Row="0"
+                 Grid.Column="0"/>
+        <Label Content="Opis:"
+                Grid.Row="1"
+                 Grid.Column="0"/>
+        <Label Content="Autor:"
+                Grid.Row="2"
+                 Grid.Column="0"/>
+        <Label Content="Data:"
+                Grid.Row="3"
+                 Grid.Column="0"/>
         <TextBox x:Name="tytul_texbox"
                  Grid.Row="0"
                  Grid.Column="1"/>
@@ -27,12 +38,14 @@
                  Grid.Row="1"
                  Grid.Column="1"/>
         <TextBox x:Name="autor_texbox"
+                 Grid.Column="1"
                  Grid.Row="2"/>
         <DatePicker x:Name="dataWydania_texbox"
+                    Grid.Column="1"
                     Grid.Row="3"/>
 
         <Button x:Name="AddBook" 
                 Content="Add Book"
-                Grid.Row="4"/>
+                Grid.Row="4" Grid.ColumnSpan="2" Click="AddBook_Click"/>
     </Grid>
 </Window>

@@ -23,5 +23,13 @@ namespace WPFGrupowy
         {
             InitializeComponent();
         }
+
+        private void AddBook_Click(object sender, RoutedEventArgs e)
+        {
+
+            Book book = new Book(tytul_texbox.Text,opis_texbox.Text,autor_texbox.Text,dataWydania_texbox.DisplayDate);
+            DataBase.AddBook(book);
+            this.Close();
+        }
     }
 }

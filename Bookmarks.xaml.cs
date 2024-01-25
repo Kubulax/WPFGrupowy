@@ -18,20 +18,26 @@ namespace WPFGrupowy
     /// Logika interakcji dla klasy Bookmarks.xaml
     /// </summary>
     public partial class Bookmarks : Window
-    {
-        public Bookmarks()
+    {    
+        public Bookmarks(Book book)
         {
             InitializeComponent();
+
+            listabookmark.ItemsSource = book.Bookmarks;
         }
 
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            Bookmark b = listabookmark.SelectedItem as Bookmark;
+            string message = "Opis: " + b.Description;
+            MessageBox.Show(message);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddBookmark(object sender, RoutedEventArgs e)
         {
-
+            Bookmark bookmark = new Bookmark(int.Parse(page_add.Text), opis_add.Text);
+            (DataContext as Book).AddBookmark(bookmark);
+            listabookmark.ItemsSource = (DataContext as Book).Bookmarks;
         }
     }
 }

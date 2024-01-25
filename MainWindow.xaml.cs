@@ -21,33 +21,35 @@ namespace WPFGrupowy
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Book> books = new List<Book>();
-        private string title;
+
+        
 
         public MainWindow()
         {
             InitializeComponent();
-            UpdateList();
+            ListaKsiazek.ItemsSource = DataBase.Books;
         }
 
-        private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void ShowBookmarks(object sender, RoutedEventArgs e)
         {
+            Book selectedbook = (sender as Button).CommandParameter as Book;
 
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            new Bookmarks().ShowDialog();
+            Bookmarks bookmarks = new Bookmarks(selectedbook);
+            bookmarks.DataContext = selectedbook;
+            bookmarks.ShowDialog();
         }
 
         private void AddBook(object sender, RoutedEventArgs e)
-        {
-
+        {     
+            new AddBookPage().ShowDialog();
+            ListaKsiazek.ItemsSource = DataBase.Books;
         }
 
         private void RemoveBook(object sender, RoutedEventArgs e)
         {
-
+            Book selectedbook = (sender as Button).CommandParameter as Book;
+            DataBase.RemoveBook(selectedbook);
+            ListaKsiazek.DataContext = DataBase.Books;
         }
 
         public void UpdateList()

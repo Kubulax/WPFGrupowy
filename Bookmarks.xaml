@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFGrupowy"
         mc:Ignorable="d"
-        Title="Bookmarks" Height="450" Width="800">
+        Title="Zakładki" Height="650" Width="800" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -13,23 +13,31 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="400"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0">
-            <Label x:Name="Title"></Label>
-            <Label x:Name="Description"></Label>
-            <Label x:Name="Autor"></Label>
-            <Label x:Name="Date"></Label>
-            <ListView MouseDoubleClick="ListView_MouseDoubleClick">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <Label x:Name="Page"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackPanel>
-       
-        <Button Click="Button_Click" Content="add new bookmark" Grid.Row="1"></Button>
+        <ScrollViewer Height="350">
+            <StackPanel Grid.Row="0">
+                <ListView MouseDoubleClick="ListView_MouseDoubleClick" x:Name="listabookmark">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="5">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Strona: "/>
+                                    <Label x:Name="Page" Content="{Binding PageNumber}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+        <Label Grid.Row="1" Content="Numer strony:"/>
+        <TextBox x:Name="page_add" Grid.Row="2" VerticalContentAlignment="Center"/>
+        <Label  Grid.Row="3" Content="Opis zakładki:"/>
+        <TextBox x:Name="opis_add" Grid.Row="4" VerticalContentAlignment="Center"/>
+        <Button Click="AddBookmark" Content="Dadaj zakładkę" Grid.Row="5" Margin="0,20,0,0"/>
     </Grid>
 </Window>
