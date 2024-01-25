@@ -10,25 +10,32 @@ using System.Windows.Documents;
 
 namespace WPFGrupowy
 {
-    public class DataBase
+    public static class DataBase
     {
-        private readonly string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Books", "books.db");
-        static public ObservableCollection<Book> Books { get; private set; }
+        private static readonly string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Books", "books2.json");
+        public static ObservableCollection<Book> Books { get; private set; }
 
-        public DataBase() { if (Books == null) { Books = new ObservableCollection<Book>(); } }
+        static DataBase() 
+        { 
+            if(Books == null)
+            {
+                ReadDataBaseFromJsonFile();
+            }
+        }
 
         public static void AddBook(Book book)
         {
-            if (Books == null) { Books = new ObservableCollection<Book>(); }
             Books.Add(book);
+            SaveDataBaseToJsonFile();
         }
 
         public static void RemoveBook(Book book)
         {
             Books.Remove(book);
+            SaveDataBaseToJsonFile();
         }
 
-        public void ReadDataBaseFromJsonFile()
+        private static void ReadDataBaseFromJsonFile()
         {
             if (File.Exists(dbPath))
             {
@@ -39,19 +46,27 @@ namespace WPFGrupowy
             }
             else
             {
+                string serializedDataBase = JsonConvert.SerializeObject(new ObservableCollection<Book>());
+                File.WriteAllText(dbPath, serializedDataBase);
 
+                Books = new ObservableCollection<Book>();
             }
         }
 
-        public void SaveDataBaseToJsonFile()
-        { 
+        private static void SaveDataBaseToJsonFile()
+        {
             if (File.Exists(dbPath))
             {
-
+                string serializedDataBase = JsonConvert.SerializeObject(Books);
+                File.Delete(dbPath);
+                File.WriteAllText(dbPath, serializedDataBase);
             }
             else
             {
+                string serializedDataBase = JsonConvert.SerializeObject(new ObservableCollection<Book>());
+                File.WriteAllText(dbPath, serializedDataBase);
 
+                Books = new ObservableCollection<Book>();
             }
         }
     }
