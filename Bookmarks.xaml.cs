@@ -28,8 +28,9 @@ namespace WPFGrupowy
 
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            //string message = "Opis" + (DataContext as Book).Description;
-            //MessageBox.Show(message);
+            Bookmark b = listabookmark.SelectedItem as Bookmark;
+            string message = "Opis: " + b.Description;
+            MessageBox.Show(message);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
