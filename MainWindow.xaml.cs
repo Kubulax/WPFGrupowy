@@ -56,12 +56,5 @@ namespace WPFGrupowy
             DataBase.RemoveBook(selectedbook);
             ListaKsiazek.DataContext = DataBase.Books;
         }
-
-        
-
-        private void AddBookmark(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
