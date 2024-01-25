@@ -19,9 +19,12 @@ namespace WPFGrupowy
     /// </summary>
     public partial class Bookmarks : Window
     {
-        public Bookmarks()
+        Book dokbook = new Book();
+        public Bookmarks(Book selbook)
         {
             InitializeComponent();
+            
+            dokbook = selbook;
         }
 
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -31,7 +34,11 @@ namespace WPFGrupowy
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            Bookmark b = new Bookmark();
+            b.PageNumber = int.Parse(page_add.Text);
+            b.Description = opis_add.Text;
+            dokbook.AddBookmark(b);
+            listabookmark.ItemsSource = dokbook.Bookmarks;
         }
     }
 }

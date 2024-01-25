@@ -23,8 +23,11 @@ namespace WPFGrupowy
             PublishedOn = publishedOn;
         }
 
+        public Book() { }   
+
         public void AddBookmark (Bookmark bookmark)
         {
+            if(Bookmarks==null) { Bookmarks = new List<Bookmark>(); }
             Bookmarks.Add(bookmark);
         }
 

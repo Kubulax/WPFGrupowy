@@ -11,10 +11,13 @@
             <Button Content="Dodaj ksiazke" Click="AddBook"/>
         </StackPanel>
 
-        <ScrollViewer>
-            <ListView x:Name="ListaKsiazek">
+        
+            <ListView x:Name="ListaKsiazek" Margin="10">
+            
                 <ListView.ItemTemplate>
+                    
                     <DataTemplate>
+                    <WrapPanel>
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Label FontSize="20">Tytul:</Label>
@@ -33,9 +36,11 @@
                             <Button Click="Button_Click" Content="Bookmark"/>
                             <Button Content="Usun ksiazke" CommandParameter="{Binding}" Click="RemoveBook"/>
                         </StackPanel>
-                    </DataTemplate>
+                    </WrapPanel>
+                </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
-        </ScrollViewer>
+            
+        </ListView>
+        
     </StackPanel>
 </Window>
