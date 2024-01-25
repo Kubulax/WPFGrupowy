@@ -30,7 +30,8 @@ namespace WPFGrupowy
 
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("placeholder");
+            string message = "Opis" + dokbook.Description;
+            MessageBox.Show(message);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
