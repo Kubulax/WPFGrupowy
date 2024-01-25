@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFGrupowy"
         mc:Ignorable="d"
-        Title="Zakładki" Height="650" Width="800" ResizeMode="NoResize">
+        Title="Bookmarks" Height="600" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -18,26 +18,25 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ScrollViewer Height="350">
-            <StackPanel Grid.Row="0">
-                <ListView MouseDoubleClick="ListView_MouseDoubleClick" x:Name="listabookmark">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="5">
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="Strona: "/>
-                                    <Label x:Name="Page" Content="{Binding PageNumber}"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackPanel>
-        </ScrollViewer>
-        <Label Grid.Row="1" Content="Numer strony:"/>
-        <TextBox x:Name="page_add" Grid.Row="2" VerticalContentAlignment="Center"/>
-        <Label  Grid.Row="3" Content="Opis zakładki:"/>
-        <TextBox x:Name="opis_add" Grid.Row="4" VerticalContentAlignment="Center"/>
-        <Button Click="AddBookmark" Content="Dadaj zakładkę" Grid.Row="5" Margin="0,20,0,0"/>
+        <StackPanel Grid.Row="0">
+            <Label x:Name="Title"></Label>
+            <Label x:Name="Description"></Label>
+            <Label x:Name="Autor"></Label>
+            <Label x:Name="Date"></Label>
+            <ListView MouseDoubleClick="ListView_MouseDoubleClick" x:Name="listabookmark">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Label x:Name="Page" Content="{Binding PageNumber}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <Label  Grid.Row="1">strona</Label>
+        <TextBox x:Name="page_add" Grid.Row="2"></TextBox>
+        <Label  Grid.Row="3">opis</Label>
+        <TextBox x:Name="opis_add" Grid.Row="4"></TextBox>
+        <Button Click="Button_Click" Content="add new bookmark" Grid.Row="5"></Button>
     </Grid>
 </Window>

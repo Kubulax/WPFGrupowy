@@ -24,6 +24,8 @@ namespace WPFGrupowy
             PublishedOn = publishedOn;
         }
 
+        public Book() { }   
+
         public void AddBookmark (Bookmark bookmark)
         {
             Bookmarks.Add(bookmark);
